@@ -43,9 +43,6 @@ SET GPA = 3.5
 WHERE Grade = 0 AND Classroom = 106;
 
 
--- TODO: set the GPA jk
-
-
 -- add kindergarteners YORAM LEVY, JUSTIN WASHINGTON, and ASTRID NG
 -- to room 115 with GPA 3.2
 INSERT INTO List(FirstName, LastName, Grade, Classroom, GPA)
