@@ -17,7 +17,9 @@ ORDER BY CarYear, Id;
 -- remove all columns from CarsData except car id, car year, acceleration,
 -- MPG, and number of cylinders
 ALTER TABLE CarsData
-DROP Edispl, Horsepower, Weight;
+DROP Edispl,
+DROP Horsepower,
+DROP Weight;
 
 
 -- remove all tuples from CarsData with <= 5 cylinders

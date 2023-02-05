@@ -32,7 +32,6 @@ VintageYear	YEAR,
 Price INT,
 Score INT,
 Cases INT,
-FOREIGN KEY(Grape) REFERENCES Grapes(Grape),
-FOREIGN KEY(Appellation) REFERENCES Appellations(Appellation),
-UNIQUE(Winery, Appellation, Name, Grape, VintageYear)
+CONSTRAINT fk_wine_1 FOREIGN KEY(Grape) REFERENCES Grapes(Grape),
+CONSTRAINT fk_wine_2 FOREIGN KEY(Appellation) REFERENCES Appellations(Appellation)
 );

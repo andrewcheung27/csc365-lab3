@@ -2,27 +2,7 @@
 /* Email: acheun29@calpoly.edu */
 
 
-SELECT * FROM CarsData;
-SELECT COUNT(*) FROM CarsData;
-
-
-SELECT * FROM CarNames;
-SELECT COUNT(*) FROM CarNames;
-
-
-SELECT * FROM ModelList;
-SELECT COUNT(*) FROM ModelList;
-
-
-SELECT * FROM CarMakers;
-SELECT COUNT(*) FROM CarMakers;
-
-
-SELECT * FROM Countries;
-SELECT COUNT(*) FROM Countries;
-
-
-SELECT * FROM Continents;
-SELECT COUNT(*) FROM Continents;
-
-
+source CARS/CARS-setup.sql;
+source CARS/CARS-insert.sql;
+source CARS/CARS-modify.sql;
+source CARS/CARS-cleanup.sql;

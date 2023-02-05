@@ -2,11 +2,7 @@
 /* Email: acheun29@calpoly.edu */
 
 
-SELECT * FROM List;
-SELECT COUNT(*) FROM List;
-
-
-SELECT * FROM Teachers;
-SELECT COUNT(*) FROM Teachers;
-
-
+source STUDENTS/STUDENTS-setup.sql;
+source STUDENTS/STUDENTS-insert.sql;
+source STUDENTS/STUDENTS-modify.sql;
+source STUDENTS/STUDENTS-cleanup.sql;

@@ -4,12 +4,12 @@
 
 -- create a GPA column in the students table
 ALTER TABLE List
-ADD COLUMN(GPA DECIMAL(3, 2))
+ADD COLUMN GPA DECIMAL(3, 2);
 
 
 -- delete students who aren't in grades 0 or 1
 DELETE FROM List
-WHERE Grade = 0 OR Grade = 1;
+WHERE !(Grade = 0 OR Grade = 1);
 
 
 -- add the teacher ERNESTO VALDEZ in classroom 115
@@ -18,6 +18,10 @@ VALUES('ERNESTO', 'VALDEZ', 115);
 
 
 -- move SHERMAN DROP, THEO HUTCHENS, and FRANKLYN BRINE to classroom 120
+-- first, create a teacher with no name in room 120 (can be filled out later
+-- once the teacher's name is known)
+INSERT INTO Teachers(FirstName, LastName, Classroom)
+VALUES(NULL, NULL, 120);
 UPDATE List
 SET Classroom = 120
 WHERE (FirstName = 'SHERMAN' AND LastName = 'DROP')

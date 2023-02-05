@@ -5,7 +5,7 @@
 CREATE TABLE Continents(
 ContId INT PRIMARY KEY,
 Continent VARCHAR(20),
-UNIQUE(Continent)
+CONSTRAINT uniq_continents_1 UNIQUE(Continent)
 );
 
 
@@ -13,8 +13,8 @@ CREATE TABLE Countries(
 CountryId INT PRIMARY KEY,
 CountryName VARCHAR(20),
 Continent INT,
-FOREIGN KEY(Continent) REFERENCES Continents(ContId),
-UNIQUE(CountryName, Continent)
+CONSTRAINT fk_countries_1 FOREIGN KEY(Continent) REFERENCES Continents(ContId),
+CONSTRAINT uniq_countries_1 UNIQUE(CountryName, Continent)
 );
 
 
@@ -23,7 +23,7 @@ Id INT PRIMARY KEY,
 Maker VARCHAR(20),
 FullName VARCHAR(30),
 Country INT,
-FOREIGN KEY(Country) REFERENCES Countries(CountryId)
+CONSTRAINT fk_carmakers_1 FOREIGN KEY(Country) REFERENCES Countries(CountryId)
 );
 
 
@@ -31,8 +31,8 @@ CREATE TABLE ModelList(
 ModelId INT PRIMARY KEY,
 Maker INT,
 Model VARCHAR(20),
-FOREIGN KEY(Maker) REFERENCES CarMakers(Id),
-UNIQUE(Model)
+CONSTRAINT fk_modellist_1 FOREIGN KEY(Maker) REFERENCES CarMakers(Id),
+CONSTRAINT uniq_modellist_1 UNIQUE(Model)
 );
 
 
@@ -40,7 +40,7 @@ CREATE TABLE CarNames(
 Id INT PRIMARY KEY,
 Model VARCHAR(20),
 Make VARCHAR(40),
-FOREIGN KEY(Model) REFERENCES ModelList(Model)
+CONSTRAINT fk_carnames_1 FOREIGN KEY(Model) REFERENCES ModelList(Model)
 );
 
 
@@ -53,5 +53,5 @@ Horsepower INT,
 Weight INT,
 Accelerate DECIMAL(4, 1),
 CarYear YEAR,
-FOREIGN KEY(Id) REFERENCES CarNames(Id)
+CONSTRAINT fk_carsdata_1 FOREIGN KEY(Id) REFERENCES CarNames(Id)
 );
