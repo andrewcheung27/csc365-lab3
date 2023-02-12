@@ -7,7 +7,7 @@ Id VARCHAR(20) PRIMARY KEY,
 Flavor VARCHAR(20),
 Food VARCHAR(20),
 Price DECIMAL(5, 2),
-UNIQUE(Flavor, Food)
+CONSTRAINT uniq_goods_1 UNIQUE(Flavor, Food)
 );
 
 
@@ -22,7 +22,7 @@ CREATE TABLE Receipts(
 ReceiptNumber INT PRIMARY KEY,
 ReceiptDate DATE,
 CustomerId INT,
-FOREIGN KEY(CustomerId) REFERENCES Customers(Id)
+CONSTRAINT fk_receipts_1 FOREIGN KEY(CustomerId) REFERENCES Customers(Id)
 );
 
 
@@ -31,6 +31,6 @@ Receipt INT,
 Ordinal INT,
 Item VARCHAR(20),
 PRIMARY KEY(Receipt, Ordinal),
-FOREIGN KEY(Receipt) REFERENCES Receipts(ReceiptNumber),
-FOREIGN KEY(Item) REFERENCES Goods(Id)
+CONSTRAINT fk_items_1 FOREIGN KEY(Receipt) REFERENCES Receipts(ReceiptNumber),
+CONSTRAINT fk_items_2 FOREIGN KEY(Item) REFERENCES Goods(Id)
 );
