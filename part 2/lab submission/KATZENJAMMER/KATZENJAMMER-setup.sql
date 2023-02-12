@@ -31,7 +31,7 @@ CREATE TABLE Tracklists(
 AlbumId INT,
 AlbumPosition INT,
 SongId INT,
-PRIMARY KEY(AlbumId, SongId, AlbumPosition),
+PRIMARY KEY(AlbumId, AlbumPosition),
 FOREIGN KEY(AlbumId) REFERENCES Albums(AId),
 FOREIGN KEY(SongId) REFERENCES Songs(SongId)
 );

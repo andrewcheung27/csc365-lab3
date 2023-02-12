@@ -8,7 +8,7 @@ Campus VARCHAR(60),
 Location VARCHAR(20),
 County VARCHAR(20),
 YearOpened INT,
-UNIQUE(Campus, Location)
+UNIQUE(Campus)
 );
 
 
