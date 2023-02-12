@@ -25,5 +25,6 @@ FirstName VARCHAR(20),
 Adults INT,
 Kids INT,
 FOREIGN KEY(Room) REFERENCES Rooms(RoomId),
-UNIQUE(LastName, FirstName, CheckIn, CheckOut)
+UNIQUE(Room),
+UNIQUE(Code, CheckIn, CheckOut)
 );

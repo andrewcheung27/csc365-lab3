@@ -14,7 +14,7 @@ CountryId INT PRIMARY KEY,
 CountryName VARCHAR(20),
 Continent INT,
 FOREIGN KEY(Continent) REFERENCES Continents(ContId),
-UNIQUE(CountryName, Continent)
+UNIQUE(CountryName)
 );
 
 
