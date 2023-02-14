@@ -22,8 +22,9 @@ def execute_sql(cursor):
     # reduce the price of all other cakes (not chocolate or lemon) by 10%
     cursor.execute("UPDATE Goods SET Price = Price * 0.90 WHERE Food = 'Cake' AND NOT Flavor = 'Chocolate' AND NOT Flavor = 'Lemon';")
 
-    # make the price of all pies equal to the cheapest cake ($8.95)
-    cursor.execute("UPDATE Goods SET Price = 8.95 WHERE Food = 'Pie';")
+    # make the price of all pies equal to the cheapest cake
+    # (lemon cake $6.95 because of previous changes)
+    cursor.execute("UPDATE Goods SET Price = 6.95 WHERE Food = 'Pie';")
 
     # output contents
     cursor.execute("SELECT * FROM Goods ORDER BY Id;")
