@@ -10,7 +10,6 @@ def execute_sql(cursor):
     # remove goods that are cheaper than $5
     # since the Items table references Goods, must add ON DELETE CASCADE first
     cursor.execute("ALTER TABLE Items DROP FOREIGN KEY fk_items_2;")
-    cursor.execute("ALTER TABLE Items ADD CONSTRAINT fk_items_2 FOREIGN KEY(Item) REFERENCES Goods(Id) ON DELETE CASCADE;")
     cursor.execute("DELETE FROM Goods WHERE Price < 5.00;")
 
     # increase the price of chocolate-flavored goods by 20%

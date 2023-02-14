@@ -11,8 +11,8 @@ def execute_sql(cursor):
     # and 'guitar' with 'acoustic guitar'.
     # first, increase Instruments.Instrument attribute to VARCHAR(30)
     cursor.execute("ALTER TABLE Instruments MODIFY Instrument VARCHAR(30);")
-    cursor.execute("UPDATE Instruments SET Instrument = REPLACE(Instrument, 'bass balalaika', 'awesome bass balalaika');")
-    cursor.execute("UPDATE Instruments SET Instrument = REPLACE(Instrument, 'guitar', 'acoustic guitar');")
+    cursor.execute("UPDATE Instruments SET Instrument = 'awesome bass balalaika' WHERE Instrument = 'bass balalaika';")
+    cursor.execute("UPDATE Instruments SET Instrument = 'guitar' WHERE Instrument = 'acoustic guitar';")
 
     # remove all records from Instruments except info about
     # 'awesome bass balalaika' or Anne-Marit (3)
